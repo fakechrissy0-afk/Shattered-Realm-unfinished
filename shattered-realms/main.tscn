@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bt1wkf0aw3wan"]
+
+[ext_resource type="PackedScene" uid="uid://ji84yyax5geh" path="res://player.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cftim1xous53t" path="res://ground.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://buvowhhqdrvqr" path="res://wall.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cdicb8wa01wjg" path="res://spikes.tscn" id="4_1bvp3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
+
+[node name="Main" type="Node2D" unique_id=1812418789]
+
+[node name="Player" parent="." unique_id=1765007993 instance=ExtResource("1_0xm2m")]
+position = Vector2(879, 392)
+
+[node name="Ground" parent="." unique_id=262188416 instance=ExtResource("2_h2yge")]
+position = Vector2(557, 145)
+
+[node name="Ground2" parent="." unique_id=1831143346 instance=ExtResource("2_h2yge")]
+position = Vector2(-278, -341)
+
+[node name="Wall" parent="." unique_id=1268899058 instance=ExtResource("3_h2yge")]
+position = Vector2(337, 328)
+
+[node name="Wall2" parent="." unique_id=1255820533 instance=ExtResource("3_h2yge")]
+position = Vector2(610, 184)
+
+[node name="Wall3" parent="." unique_id=54034753 instance=ExtResource("3_h2yge")]
+position = Vector2(-705, 153)
+
+[node name="Wall4" parent="." unique_id=947065337 instance=ExtResource("3_h2yge")]
+position = Vector2(-1069, 241)
+
+[node name="Wall5" parent="." unique_id=2049113826 instance=ExtResource("3_h2yge")]
+position = Vector2(-1712, 244)
+
+[node name="spikes" parent="." unique_id=1091012190 instance=ExtResource("4_1bvp3")]
+position = Vector2(616, 432)
+scale = Vector2(0.5, 0.5)
+
+[node name="VoidKillzone" parent="." unique_id=413314777 instance=ExtResource("4_1bvp3")]
+position = Vector2(803, 753)
+scale = Vector2(999, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=921492318]
+
+[node name="SunLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1729415155]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/SunLayer" unique_id=1745945067]
+texture = SubResource("AtlasTexture_1bvp3")
+
+[node name="MountainLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1829372245]

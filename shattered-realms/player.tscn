@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ji84yyax5geh"]
+
+[ext_resource type="Texture2D" uid="uid://l035t3l6olbl" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://c34i5p8l7754h" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(116, 111)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_onrkg"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+gravity = Vector3(0, 300, 0)
+
+[node name="Player" type="CharacterBody2D" unique_id=1765007993]
+collision_mask = 3
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=164734178]
+position = Vector2(-6, -8)
+scale = Vector2(0.90625, 0.875)
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1673487246]
+position = Vector2(-6, -8.5)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=876507652]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=546697287]
+one_shot = true
+
+[node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=892878428]
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+collision_base_size = 128.0
+process_material = SubResource("ParticleProcessMaterial_onrkg")
